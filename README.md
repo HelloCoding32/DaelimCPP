@@ -1,6 +1,12 @@
-2025년도 2학기 C++ 프로그래밍 수업 원격 리포지토리
+\# 2025년도 2학기 C++ 프로그래밍 수업 원격 리포지토리
 
 
+
+\## 클래스 다이어그램
+
+
+
+```mermaid
 
 classDiagram
 
@@ -59,8 +65,4 @@ classDiagram
 &nbsp;   Invoice \*-- Company : composition (has-a)
 
 &nbsp;   Invoice ..> Product : dependency (use-a)
-
-&nbsp;   
-
-
 
