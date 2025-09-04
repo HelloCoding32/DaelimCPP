@@ -1,0 +1,5 @@
+*.sin
+*.vcxproj
+*.vcsproj.filters
+*.vcxproj.user
+*.vs/
