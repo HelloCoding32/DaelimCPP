@@ -1,6 +1,6 @@
 # 2025 Fall Semester C++ Programming Course Remote Repository
 
-## 클래스 다이어그램
+## class diagram
 
 ```mermaid
 classDiagram
