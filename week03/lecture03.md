@@ -1,0 +1,20 @@
+# 2025 Fall Semester C++ Programming Course Remote Repository
+
+classDiagram
+    direction LR
+    class Pokemon {
+        +Pokemon()
+        +virtual ~Pokemon()
+        +virtual void attack() const
+    }
+
+    class Pikachu {
+        +Pikachu()
+        +~Pikachu()
+        +void attack() const
+    }
+
+    Pokemon <|-- Pikachu : Inheritance (is-a)
+
+    note for Pokemon "다형성의 핵심: 가상 소멸자, 가상 함수 포함"
+    note for Pikachu "Pokemon::attack() 재정의"
