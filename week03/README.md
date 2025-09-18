@@ -1,20 +1,27 @@
 # 2025 Fall Semester C++ Programming Course Remote Repository
 
 classDiagram
-    direction LR
+    direction TB
+    
     class Pokemon {
+        <<abstract>>
         +Pokemon()
         +virtual ~Pokemon()
-        +virtual void attack() const
+        +virtual void attack() const = 0
+        +getName() const string
+        -string name
+        -int level
     }
-
+    
     class Pikachu {
         +Pikachu()
         +~Pikachu()
         +void attack() const
+        +void thunderbolt()
+        -int electricPower
     }
-
-    Pokemon <|-- Pikachu : 상속 (is-a)
-
-    note for Pokemon "다형성의 핵심: 가상 소멸자, 가상 함수 포함"
-    note for Pikachu "Pokemon::attack() 재정의"
+    
+    Pokemon <|-- Pikachu
+    
+    note for Pokemon "Abstract base class\nDefines common interface"
+    note for Pikachu "Concrete implementation\nElectric-type Pokemon"
