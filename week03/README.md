@@ -2,7 +2,6 @@
 
 classDiagram
     direction TB
-    
     class Pokemon {
         <<abstract>>
         +Pokemon()
@@ -12,7 +11,7 @@ classDiagram
         -string name
         -int level
     }
-    
+
     class Pikachu {
         +Pikachu()
         +~Pikachu()
@@ -22,6 +21,6 @@ classDiagram
     }
     
     Pokemon <|-- Pikachu
-    
+
     note for Pokemon "Abstract base class\nDefines common interface"
     note for Pikachu "Concrete implementation\nElectric-type Pokemon"
