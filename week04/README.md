@@ -25,18 +25,17 @@ classDiagram
 &nbsp;       +attack() void
 
 &nbsp;   }
+&nbsp; 
 
+&nbsp;    class Squirtle {
 
+&nbsp;         +Squirtle()
 
-   class Squirtle {
+&nbsp;         +~Squirtle()
 
-        +Squirtle()
+&nbsp;        +attack() void
 
-        +~Squirtle()
-
-        +attack() void
-
-    }
+&nbsp;     }
 
 
 
@@ -44,7 +43,7 @@ classDiagram
 
 &nbsp;   Pokemon <|-- Pikachu : inheritance
 
-    Pokemon <|-- Squirtle : inheritance
+&nbsp;   Pokemon <|-- Squirtle : inheritance
 
 &nbsp;  ```
 
