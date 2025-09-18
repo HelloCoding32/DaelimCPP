@@ -14,7 +14,7 @@ classDiagram
         +void attack() const
     }
 
-    Pokemon <|-- Pikachu : Inheritance (is-a)
+    Pokemon <|-- Pikachu : 상속 (is-a)
 
     note for Pokemon "다형성의 핵심: 가상 소멸자, 가상 함수 포함"
     note for Pikachu "Pokemon::attack() 재정의"
