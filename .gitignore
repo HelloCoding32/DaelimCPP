@@ -7,3 +7,6 @@ week0*/week*/
 week0*/x64/
 *.DS_Store
 *.pdf
+.idea/
+quit
+CMakeLists.txt
