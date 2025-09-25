@@ -1,26 +1,17 @@
 # 2025 Fall Semester C++ Programming Course Remote Repository
 
+```mermaid
 classDiagram
-    direction TB
     class Pokemon {
-        <<abstract>>
         +Pokemon()
-        +virtual ~Pokemon()
-        +virtual void attack() const = 0
-        +getName() const string
-        -string name
-        -int level
+        +~Pokemon()
+        +attack() const
     }
 
     class Pikachu {
         +Pikachu()
         +~Pikachu()
-        +void attack() const
-        +void thunderbolt()
-        -int electricPower
+        +attack() const
     }
-    
-    Pokemon <|-- Pikachu
 
-    note for Pokemon "Abstract base class\nDefines common interface"
-    note for Pikachu "Concrete implementation\nElectric-type Pokemon"
+    Pokemon <|-- Pikachu : inheritance
