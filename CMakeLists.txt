@@ -1,16 +1,11 @@
-cmake_minimum_required(VERSION 3.26)
-project(DaelimCPP)
-set(CMAKE_CXX_STANDARD 17)
+set(WEEK_DIRS week01 week02 week03 week04 week05)
 
-# 주차 폴더 목록만 관리합니다.
-set(WEEK_DIRS week01 week02 week03 week04 DaelimCPP/week05)
-
-foreach(d ${WEEK_DIRS})
-    # 폴더 안의 모든 .cpp 자동 수집 (파일 추가/삭제에 반응)
-    file(GLOB SRC CONFIGURE_DEPENDS ${d}/*.cpp)
-    if(SRC)  # cpp가 하나라도 있으면 실행파일 생성
-        add_executable(${d} ${SRC})
-        # 필요하다면 include 경로
-        target_include_directories(${d} PRIVATE ${d})
+foreach(dir IN LISTS WEEK_DIRS)
+    file(GLOB SRC CONFIGURE_DEPENDS ${dir}/*.cpp)
+    if(SRC)
+        # dir이 'week05'면 타깃 이름도 'week05'가 됩니다.
+        set(target_name ${dir})
+        add_executable(${target_name} ${SRC})
+        target_include_directories(${target_name} PRIVATE ${dir})
     endif()
 endforeach()
