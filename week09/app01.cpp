@@ -50,15 +50,30 @@ public:
 
 // nonmember function
 
+istream& operator>>(istream& i, Complex& right) {
+    cout << "input real value : ";
+    int real, img;
+    i >> real;
+    right.setReal(real);
+    cout << "input imaginary value : ";
+    i >> img;
+    right.setimaginary(img);
+    return i;
+
+}
 Complex operator+(const Complex& left, const Complex& right)  { //operator => 연산자 오버로딩
     int r = left.getReal() + right.getReal();
     int imag = left.getimaginary() + right.getimaginary();
     return Complex(r, imag);
 }
 
+
 int main() {
     Complex c1;
-    Complex c2(10,7);
+    // Complex c2(10,7);
+    Complex c2;
+    cin >> c2;
+
     c1.setReal(5);
     c1.setimaginary(3);
 
