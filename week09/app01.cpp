@@ -24,12 +24,14 @@ public:
     int getimaginary() const {
         return imaginary;
     }
-    Complex operator+(const Complex& right)  { //operator => 연산자 오버로딩
-        int r = this->real + right.real;
-        int imag = this->imaginary + right.imaginary;
-        return Complex(r, imag);
-        // return Complex(r, thie-> iamginary) //가능하나 수학적으로 문제가 됨.
-    }
+
+    // member function (method)
+    // Complex operator+(const Complex& right)  { //operator => 연산자 오버로딩
+    //     int r = this->real + right.real;
+    //     int imag = this->imaginary + right.imaginary;
+    //     return Complex(r, imag);
+    //     // return Complex(r, this-> iamginary) //가능하나 수학적으로 문제가 됨.
+    // }
     Complex operator++(int) { // int => Tag, 후위연산
         Complex previous (this->real, this->imaginary);
         this->real = this->real + 1;
@@ -39,11 +41,19 @@ public:
         this->real++;
         return Complex(this->real, this->imaginary);
     }
+    friend ostream& operator<<(ostream& o, const Complex& right) { //complex& 뒤에 &의 의미는 얕은 복사임, complex만 쓰면 깊은 복사로 쓰임.
+        o << right.real << "+" << right.imaginary << "i" << endl;
+        return o;
+    }
 };
 
-ostream& operator<<(ostream& o, const Complex& right) {
-    o << right.getReal() << "+" << right.getimaginary() << "i" << endl;
-    return o;
+
+// nonmember function
+
+Complex operator+(const Complex& left, const Complex& right)  { //operator => 연산자 오버로딩
+    int r = left.getReal() + right.getReal();
+    int imag = left.getimaginary() + right.getimaginary();
+    return Complex(r, imag);
 }
 
 int main() {
@@ -52,11 +62,11 @@ int main() {
     c1.setReal(5);
     c1.setimaginary(3);
 
-    Complex c3 = c1 + c2; //  Complex c3 = c1.operator+(c2);
+    Complex c3 = operator+(c1, c2);
+    // Complex c3 = c1 + c2; //  Complex c3 = c1.operator+(c2);
 
     Complex c4 = c3++; // real 값만 1증가
-    // cout << c3.getReal() << "+" << c3.getimaginary() << "i" << endl;
-    // cout << c4.getReal() << "+" << c4.getimaginary() << "i" << endl;
+
 
     cout << c4 << endl;
     return 0;
