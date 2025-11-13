@@ -1,7 +1,12 @@
 #pragma once
+#include <iostream>
+#include "DynamicArray.h"
+
 class MyException {
 private:
-   int errorCode;
+   const int errorCode;
    const char* errorMessage;
-   const MyException* errorAddress;
+   DynamicArray* errorAddress;
+public:
+   MyException(int ec, const char* em, DynamicArray* ea);
 };
