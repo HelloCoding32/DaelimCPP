@@ -1,6 +1,6 @@
 #include <iostream>
-#include "DynamicArray.h"
-#include "MyException.h"
+#include "./Header/DynamicArray.h"
+#include "./Header/MyException.h"
 using namespace std;
 
 int main()
@@ -15,12 +15,13 @@ int main()
 
         cout << da1.getAt(4) << endl;
         cout << da1.getAt(0) << endl;
+        //cout < endl;
         cout << da1.getAt(7) << endl;  // !
     }
-    catch (const MyException &err) {
-        cout << "에러코드 : " << err.getErrorCode() << endl;
-        cout << "에러메세지 : " << err.getErrorMessage() << endl;
-        cout << "에러 메모리 번지 주소 : " <<  err.getErrorAddress() << endl;
+    catch (const MyException& err) {
+        cout << "에러코드 : " << err.getErrorCode() << '\n';
+        cout << "에러메세지 : " << err.getErrorMessage() << '\n';
+        cout << "에러 메모리 번지 주소 : " << err.getErrorAddress() << '\n';
 
     }
     catch (...) {
@@ -28,4 +29,3 @@ int main()
     }
 
     return 0;
-}
