@@ -20,10 +20,11 @@ void display<const char*>(const char* value) {
 
 int main()
 {
-    // Generic
+    // Gerneric
     display(50);
     display(2.41);
-    // Specialized
+
+    // Specilized
     display('2');
     display("2");
     display('Hello');
