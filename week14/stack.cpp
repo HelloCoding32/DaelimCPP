@@ -1,6 +1,6 @@
 ﻿#ifndef STACK_CPP
 #define STACK_CPP
-#include "./Header/stack.h"
+#include "stack.h"
 
 // 생성자
 template<typename T>
